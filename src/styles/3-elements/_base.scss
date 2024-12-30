@@ -1,0 +1,22 @@
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  font-family: var(--ff-primary);
+  line-height: 1.4;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid var(--clr-neutral-300);
+  border-radius: 0.4em;
+  outline: none;
+
+  &:focus-visible {
+    border-color: var(--clr-neutral-900);
+  }
+
+  &::placeholder {
+    color: var(--clr-neutral-300);
+  }
+}

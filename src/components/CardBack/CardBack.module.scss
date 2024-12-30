@@ -1,0 +1,17 @@
+.card {
+  --_scale: 1;
+
+  width: calc(447px * var(--_scale));
+  height: calc(245px * var(--_scale));
+  border-radius: calc(var(--sp-300) * var(--_scale));
+  background-image: url("@/assets/images/bg-card-back.png");
+  background-size: cover;
+  color: var(--clr-neutral-100);
+}
+
+.cvc {
+  padding-inline-start: calc(360px * var(--_scale));
+  padding-block-start: calc(110px * var(--_scale));
+  font-size: calc(14px * var(--_scale));
+  letter-spacing: calc(0.16em * var(--_scale));
+}

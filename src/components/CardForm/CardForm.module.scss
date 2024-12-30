@@ -1,0 +1,149 @@
+// use flex column for form and wrap exp date and cvc in grid div
+
+.form {
+  --_label-margin: var(--sp-100);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "cardholder-label cardholder-label cardholder-label cardholder-label"
+    "cardholder-input cardholder-input cardholder-input cardholder-input"
+    "cardholder-error cardholder-error cardholder-error cardholder-error"
+    "number-label number-label number-label number-label"
+    "number-input number-input number-input number-input"
+    "number-error number-error number-error number-error"
+    "exp-date exp-date cvc-label cvc-label"
+    "exp-date exp-date cvc-input cvc-input"
+    "exp-date exp-date cvc-error cvc-error"
+    "btn btn btn btn";
+  // column-gap: var(--sp-400);
+  max-width: 380px;
+  // outline: 1px solid pink;
+}
+
+.label {
+  margin-block-start: var(--sp-400);
+  margin-block-end: var(--sp-100);
+  font-size: var(--fs-200);
+  letter-spacing: 0.1em;
+}
+
+.input--error {
+  border-color: var(--clr-warning-500);
+}
+
+.error {
+  margin-block-start: var(--sp-200);
+  color: var(--clr-warning-500);
+  font-size: var(--fs-100);
+}
+
+.cardholder-label {
+  // grid-column: 1 / 5;
+  // grid-row: 1 / 2;
+  grid-area: cardholder-label;
+}
+
+.cardholder-input {
+  // grid-column: 1 / 5;
+  // grid-row: 2 / 3;
+  grid-area: cardholder-input;
+}
+
+.cardholder-error {
+  // grid-column: 1 / 5;
+  // grid-row: 3 / 4;
+  grid-area: cardholder-error;
+}
+
+.number-label {
+  // grid-column: 1 / 5;
+  // grid-row: 4 / 5;
+  grid-area: number-label;
+}
+
+.number-input {
+  // grid-column: 1 / 5;
+  // grid-row: 5 / 6;
+  grid-area: number-input;
+}
+
+.number-error {
+  // grid-column: 1 / 5;
+  // grid-row: 6 / 7;
+  grid-area: number-error;
+}
+
+.exp-date {
+  grid-area: exp-date;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  // column-gap: var(--sp-300);
+}
+
+.exp-date-label {
+  grid-column: 1 / -1;
+}
+
+.exp-date-error {
+  grid-column: 1 / -1;
+}
+
+.month-label {
+  // grid-column: 1 / 2;
+  // grid-row: 7 / 8;
+  // grid-area: month-label;
+}
+
+.month-input {
+  // grid-column: 1 / 2;
+  // grid-row: 8 / 9;
+  // grid-area: month-input;
+}
+
+.month-error {
+  // grid-column: 1 / 2;
+  // grid-row: 9 / 10;
+  // grid-area: month-error;
+}
+
+.year-label {
+  // grid-column: 2 / 3;
+  // grid-row: 7 / 8;
+  // grid-area: year-label;
+}
+
+.year-input {
+  // grid-column: 2 / 3;
+  // grid-row: 8 / 9;
+  // grid-area: year-input;
+}
+
+.year-error {
+  // grid-column: 2 / 3;
+  // grid-row: 9 / 10;
+  // grid-area: year-error;
+}
+
+.cvc-label {
+  // grid-column: 3 / 5;
+  // grid-row: 7 / 8;
+  grid-area: cvc-label;
+}
+
+.cvc-input {
+  // grid-column: 3 / 5;
+  // grid-row: 8 / 9;
+  grid-area: cvc-input;
+}
+
+.cvc-error {
+  // grid-column: 3 / 5;
+  // grid-row: 9 / 10;
+  grid-area: cvc-error;
+}
+
+.btn {
+  grid-area: btn;
+}

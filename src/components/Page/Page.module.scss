@@ -1,0 +1,87 @@
+.page {
+  --_padding-inline: var(--sp-400);
+
+  display: grid;
+  // gap: var(--sp-400);
+}
+
+.cards-block {
+  --_card-offset-block: 6rem;
+
+  display: flex;
+  justify-content: center;
+  height: 240px;
+  margin-block-end: var(--_card-offset-block);
+  padding-inline: var(--_padding-inline);
+  padding-block-start: var(--sp-800);
+  background-image: url("@/assets/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-block {
+  display: flex;
+  justify-content: center;
+  padding-inline: var(--_padding-inline);
+}
+
+.cards {
+  display: grid;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+
+  > *:nth-child(1) {
+    --_scale: 0.7;
+
+    grid-area: 1 / 1;
+    margin-inline-start: auto;
+  }
+
+  > *:nth-child(2) {
+    --_scale: 0.7;
+
+    grid-area: 1 / 1;
+    margin-block-start: var(--_card-offset-block);
+    margin-inline-end: auto;
+  }
+}
+
+.card-form {
+  // display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: auto-fit;
+  // gap: var(--sp-400);
+  max-width: 380px;
+  // margin-inline: auto;
+
+  // // cardholder
+  // > *:nth-child(1) {
+  //   grid-column: 1 / 5;
+  // }
+
+  // // card number
+  // > *:nth-child(2) {
+  //   grid-column: 1 / 5;
+  // }
+
+  // // mm
+  // > *:nth-child(3) {
+  //   grid-column: 1 / 2;
+  // }
+
+  // // yy
+  // > *:nth-child(4) {
+  //   grid-column: 2 / 3;
+  // }
+
+  // // cvc
+  // > *:nth-child(5) {
+  //   grid-column: 3 / 5;
+  // }
+
+  // // btn
+  // > *:nth-child(6) {
+  //   grid-column: 1 / 5;
+  // }
+}

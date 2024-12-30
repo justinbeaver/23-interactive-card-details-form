@@ -1,0 +1,11 @@
+// Must have .module.scss extension
+// for ease of importing breakpoints to JS
+// with default module imports
+
+$mobile: 375px;
+$desktop: 800px;
+
+:export {
+  mobile: $mobile;
+  desktop: $desktop;
+}
