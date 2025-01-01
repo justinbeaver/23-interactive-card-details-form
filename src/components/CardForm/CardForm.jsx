@@ -21,28 +21,14 @@ export const CardForm = ({
   onSubmit,
 }) => {
   const cardholderName = () => {
-    // const labelClass = s.label + " " + s["cardholder-label"];
-    // const inputClass = `${s["cardholder-input"]} ${
-    //   cardholderError ? s["input--error"] : ""
-    // }`;
-    // const errorClass = s.error + " " + s["cardholder-error"];
-
-    const labelClass = cx({
-      [s.label]: true,
-      [s["cardholder-label"]]: true,
-    });
     const inputClass = cx({
-      [s["cardholder-input"]]: true,
+      [s.input]: true,
       [s["input--error"]]: cardholderError,
-    });
-    const errorClass = cx({
-      [s.error]: true,
-      [s["cardholder-error"]]: true,
     });
 
     return (
       <>
-        <label className={labelClass} htmlFor="cardholder">
+        <label className={s.label} htmlFor="cardholder">
           CARDHOLDER NAME
         </label>
         <input
@@ -56,7 +42,7 @@ export const CardForm = ({
           onChange={handleInputChange}
         />
         {cardholderError && (
-          <p id="cardholder-error" className={errorClass}>
+          <p id="cardholder-error" className={s.error}>
             {cardholderError}
           </p>
         )}
@@ -65,28 +51,14 @@ export const CardForm = ({
   };
 
   const cardNumber = () => {
-    // const labelClass = s.label + " " + s["number-label"];
-    // const inputClass = `${s["number-input"]} ${
-    //   numberError ? s["input--error"] : ""
-    // }`;
-    // const errorClass = s.error + " " + s["number-error"];
-
-    const labelClass = cx({
-      [s.label]: true,
-      [s["number-label"]]: true,
-    });
     const inputClass = cx({
-      [s["number-input"]]: true,
+      [s.input]: true,
       [s["input--error"]]: numberError,
-    });
-    const errorClass = cx({
-      [s.error]: true,
-      [s["number-error"]]: true,
     });
 
     return (
       <>
-        <label className={labelClass} htmlFor="number">
+        <label className={s.label} htmlFor="number">
           CARD NUMBER
         </label>
         <input
@@ -100,7 +72,7 @@ export const CardForm = ({
           onChange={handleInputChange}
         />
         {numberError && (
-          <p id="number-error" className={errorClass}>
+          <p id="number-error" className={s.error}>
             {numberError}
           </p>
         )}
@@ -111,25 +83,16 @@ export const CardForm = ({
   const expDate = () => {
     const expDateError = monthError || yearError || "";
 
-    // const labelClass = s.label + " " + s["exp-date-label"];
-    // const monthInputClass = `${s["month-input"]} ${
-    //   monthError ? s["input--error"] : ""
-    // }`;
-    // const yearInputClass = `${s["year-input"]} ${
-    //   yearError ? s["input--error"] : ""
-    // }`;
-    // const errorClass = s.error + " " + s["exp-date-error"];
-
     const labelClass = cx({
       [s.label]: true,
       [s["exp-date-label"]]: true,
     });
     const monthInputClass = cx({
-      [s["month-input"]]: true,
+      [s.input]: true,
       [s["input--error"]]: monthError,
     });
     const yearInputClass = cx({
-      [s["year-input"]]: true,
+      [s.input]: true,
       [s["input--error"]]: yearError,
     });
     const errorClass = cx({
@@ -139,7 +102,7 @@ export const CardForm = ({
 
     return (
       <div className={s["exp-date"]}>
-        <p className={labelClass}>EXP. DATE (MM/YY)</p>
+        <label className={labelClass}>EXP. DATE (MM/YY)</label>
 
         <label className="visually-hidden" htmlFor="month">
           MONTH
@@ -179,15 +142,12 @@ export const CardForm = ({
   };
 
   const cvcField = () => {
-    // const labelClass = s.label + " " + s["cvc-label"];
-    // const inputClass = `${s["cvc-input"]} ${cvcError ? s["input--error"] : ""}`;
-    // const errorClass = s.error + " " + s["cvc-error"];
-
     const labelClass = cx({
       [s.label]: true,
       [s["cvc-label"]]: true,
     });
     const inputClass = cx({
+      [s.input]: true,
       [s["cvc-input"]]: true,
       [s["input--error"]]: cvcError,
     });
@@ -222,10 +182,12 @@ export const CardForm = ({
 
   return (
     <form className={s.form} onSubmit={onSubmit}>
-      {cardholderName()}
-      {cardNumber()}
-      {expDate()}
-      {cvcField()}
+      <div>{cardholderName()}</div>
+      <div>{cardNumber()}</div>
+      <div className={s.details}>
+        {expDate()}
+        {cvcField()}
+      </div>
       <Btn className={s.btn} type="submit">
         Confirm
       </Btn>

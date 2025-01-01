@@ -1,0 +1,49 @@
+@use "@/styles/0-settings/breakpoints.module";
+
+.cards {
+  --_card-scale-sm: 0.7;
+  --_card-scale-md: 1;
+  --_width-sm: 450px;
+  --_width-md: 530px;
+  --_height-sm: 265px;
+  --_height-md: 560px;
+
+  display: grid;
+  width: 100%;
+  max-width: var(--_width-sm);
+  height: var(--_height-sm);
+  padding: var(--_padding-inline);
+
+  @media (width > breakpoints.$desktop) {
+    max-width: var(--_width-md);
+    height: var(--_height-md);
+  }
+
+  // Card Back
+  > *:nth-child(1) {
+    --_scale: var(--_card-scale-sm);
+
+    grid-area: 1 / 1;
+    margin-inline-start: auto; // Push card to the right
+
+    @media (width > breakpoints.$desktop) {
+      --_scale: var(--_card-scale-md);
+      margin-block-start: auto;
+    }
+  }
+
+  // Card Front
+  > *:nth-child(2) {
+    --_scale: var(--_card-scale-sm);
+
+    grid-area: 1 / 1;
+    margin-block-start: auto; // Push card to the bottom
+    margin-inline-end: auto; // Push card to the left
+
+    @media (width > breakpoints.$desktop) {
+      --_scale: var(--_card-scale-md);
+      margin-block-start: 0px;
+      margin-block-end: auto;
+    }
+  }
+}

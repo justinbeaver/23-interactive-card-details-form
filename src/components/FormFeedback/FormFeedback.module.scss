@@ -1,0 +1,22 @@
+.feedback {
+  display: grid;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+
+  > svg {
+    justify-self: center;
+    margin-block-end: var(--sp-700);
+  }
+}
+
+.title {
+  margin-block-end: var(--sp-300);
+  color: var(--clr-neutral-900);
+  font-size: var(--fs-900);
+}
+
+.description {
+  margin-block-end: var(--sp-900);
+  color: var(--clr-neutral-500);
+}
